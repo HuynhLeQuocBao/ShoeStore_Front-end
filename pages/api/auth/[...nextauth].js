@@ -63,10 +63,6 @@ export default NextAuth({
 				}
 				return token;
 			} catch (error) {
-				// console.log(error?.response?.data);
-				// return {
-				// 	isError: true,
-				// };
 				return token;
 			}
 		},

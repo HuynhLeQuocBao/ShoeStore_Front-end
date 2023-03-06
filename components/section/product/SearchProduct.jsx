@@ -14,7 +14,6 @@ export function SearchProduct() {
             const fechPublic = async () => {
                 const dataProduct = await productApi.searchProducts(router.query.slug);
                 setData(dataProduct);
-                console.log('dataProduct', router.query.slug)
             };
             fechPublic();
         } catch (error) {

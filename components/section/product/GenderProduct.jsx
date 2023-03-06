@@ -20,7 +20,6 @@ export function GenderProduct({ ...props }) {
       console.log("Error");
     }
   }, []);
-  console.log('dataFilter', dataFilter)
   return (
     <Container>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mx-6 md:mx-0 pt-24">

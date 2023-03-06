@@ -34,7 +34,6 @@ export function FormQuantity({ ...props }) {
 					quantity: quantity,
 					size: size,
 				});
-				console.log({ result });
 				props.onTotal(true)
 			} catch (error) { }
 		};

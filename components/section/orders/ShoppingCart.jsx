@@ -18,7 +18,6 @@ export function ShoppingCart() {
         try {
             const fetchCart = async () => {
                 const data = await cartApi.getAllCart();
-                console.log('cart', data)
                 setDataCart(data?.results)
                 setSubTotal(data?.totalCart)
                 // data?.results.map((item) => setTotalItem((prev) => [...prev, item.productPrice * item.quantity]))
@@ -30,14 +29,10 @@ export function ShoppingCart() {
             console.log("Error");
         }
     }, [checkDelete, check]);
-    useEffect(() => {
-        console.log('totalItem', totalItem)
-    }, [totalItem,])
     const handleDeleteItemCart = (id) => {
         const fetchDeleteCart = async () => {
             try {
                 const result = await cartApi.deleteCart(id);
-                console.log({ result });
                 setCheckDelete(true)
             } catch (error) {
             }
@@ -48,7 +43,6 @@ export function ShoppingCart() {
     const updateFieldChanged = value => {
         let newArr = totalItem
         newArr[value.index] = value.total
-        console.log(newArr[index])
         setTotalItem(newArr);
         setCheck(true)
     }

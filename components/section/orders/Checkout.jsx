@@ -10,7 +10,6 @@ import { useSession } from "next-auth/react";
 export function Checkout() {
 	const router = useRouter();
 	const { data: session } = useSession();
-	console.log("session", session?.user?.fullname);
 	const [data, setData] = useState([]);
 	const [subTotal, setSubTotal] = useState(0);
 	const [fullname, setFullname] = useState(session?.user?.fullname);
@@ -35,7 +34,6 @@ export function Checkout() {
 				if (dataCart?.totalCart === 0) {
 					router.push("/shopping-cart");
 				}
-				console.log(dataCart);
 			};
 			fetchCart();
 		} catch (error) {
@@ -51,7 +49,6 @@ export function Checkout() {
 					numberPhone: data.numberPhone,
 					email: data.email,
 				});
-				console.log(result);
 				if (result) {
 					router.push("/order-complete");
 					setTimeout(() => {
