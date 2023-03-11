@@ -7,5 +7,5 @@ export default function Complete() {
             <Breadcum />
             <Ordercomplete />
         </div>
-    )
+    );
 }

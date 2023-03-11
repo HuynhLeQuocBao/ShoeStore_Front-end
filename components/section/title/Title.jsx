@@ -1,13 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
-import { motion } from 'framer-motion';
-import { Container } from '@/components/common/index';
+import { Container } from "@/components/common/index";
 
 export function Title({ ...props }) {
-  return (
-    <Container>
-      <div className="mx-4 md:mx-0 font-Rokkitt text-4xl font-bold text-center py-24">
-        <h2>{props.onTitle}</h2>
-      </div>
-    </Container>
-  );
+    return (
+        <Container>
+            <div className="mx-4 md:mx-0 font-Rokkitt text-4xl font-bold text-center py-24">
+                <h2>{props.onTitle}</h2>
+            </div>
+        </Container>
+    );
 }

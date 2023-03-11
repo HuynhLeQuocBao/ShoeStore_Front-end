@@ -3,5 +3,5 @@ export function BackToTop() {
         <div>
             <img src="/images/svg/backToTop.svg" className="w-full h-full" />
         </div>
-    )
+    );
 }

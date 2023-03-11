@@ -1,11 +1,11 @@
-import axiosClient from './axiosClient';
+import axiosClient from "./axiosClient";
 
 export const cartApi = {
     getAllCart() {
-        return axiosClient.get('/customer/cart');
+        return axiosClient.get("/customer/cart");
     },
     addCart(data) {
-        return axiosClient.post('/customer/cart/add', data);
+        return axiosClient.post("/customer/cart/add", data);
     },
     updateCart(id, data) {
         return axiosClient.put(`/customer/cart/update/${id}`, data);

@@ -7,5 +7,5 @@ export default function CheckOut() {
             <Breadcum />
             <Checkout />
         </div>
-    )
+    );
 }

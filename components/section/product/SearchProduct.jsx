@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { productApi } from "@/apiClient/product";
 import { Container } from "@/components/common/index";
 import { useEffect, useState } from "react";
@@ -7,12 +6,14 @@ import { Pagination } from ".";
 import { useRouter } from "next/router";
 
 export function SearchProduct() {
-    const router = useRouter()
+    const router = useRouter();
     const [data, setData] = useState([]);
     useEffect(() => {
         try {
             const fechPublic = async () => {
-                const dataProduct = await productApi.searchProducts(router.query.slug);
+                const dataProduct = await productApi.searchProducts(
+                    router.query.slug
+                );
                 setData(dataProduct);
             };
             fechPublic();
@@ -28,11 +29,11 @@ export function SearchProduct() {
                     <Category />
                 </div>
                 <div className="col-span-3">
-                    {data?.length > 0 ?
+                    {data?.length > 0 ? (
                         <Pagination data={data} itemsPerPage={9} />
-                        :
+                    ) : (
                         <div className="w-full text-center">Not found</div>
-                    }
+                    )}
                 </div>
             </div>
         </Container>
