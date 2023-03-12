@@ -24,6 +24,11 @@ export function Checkout() {
     } = useForm({
         mode: "onChange",
     });
+
+    if(!session) {
+        setTimeout(() => router.push("/login"));
+    }
+    
     useEffect(() => {
         try {
             const fetchCart = async () => {

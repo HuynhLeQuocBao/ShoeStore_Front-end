@@ -2,8 +2,16 @@ import { Container } from "@/components/common";
 import Link from "next/link";
 import { ProgressCart } from "./";
 import { HiCheck, HiShoppingCart } from "react-icons/hi";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 export function Ordercomplete() {
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    if(!session) {
+        setTimeout(() => router.push("/login"));
+    }
     return (
         <Container>
             <ProgressCart />

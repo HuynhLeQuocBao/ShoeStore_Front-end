@@ -5,15 +5,20 @@ import { HiOutlineX } from "react-icons/hi";
 import { useRouter } from "next/router";
 import { ProcessOrder } from "./ProcessOrder";
 import { ToastContainer, toast } from "react-toastify";
+import { useSession } from "next-auth/react";
 import "react-toastify/dist/ReactToastify.css";
 
 export function OrderDetail() {
     const router = useRouter();
     const [dataOrder, setDataOrder] = useState([]);
     const [subTotal, setSubTotal] = useState(0);
-    const [idOrder, setIdOrder] = useState();
     const [stateOrder, setStateOrder] = useState();
-    // const [confirm, se] = useState()
+
+    const { data: session } = useSession();
+
+    if(!session) {
+        setTimeout(() => router.push("/login"));
+    }
 
     useEffect(() => {
         try {
