@@ -4,7 +4,7 @@ import { GenderProduct } from "@/components/section/product";
 import React from "react";
 import { BannerChild } from "@/components/section/banner";
 
-export default function About() {
+export default function ShoesForWomen() {
     return (
         <div>
             <Breadcum />

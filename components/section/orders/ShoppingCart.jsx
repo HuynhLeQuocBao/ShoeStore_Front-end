@@ -5,8 +5,6 @@ import { FormQuantity } from "./FormQuantity";
 import Link from "next/link";
 import { ProgressCart } from "./ProgressCart";
 import { HiOutlineX } from "react-icons/hi";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 
 export function ShoppingCart() {
     const [dataCart, setDataCart] = useState([]);
@@ -14,10 +12,6 @@ export function ShoppingCart() {
     const [check, setCheck] = useState(false);
     const [totalItem, setTotalItem] = useState([]);
     const [subTotal, setSubTotal] = useState(0);
-    const { data: session } = useSession();
-    const router = useRouter();
-
-    if(!session) setTimeout(() => router.push("/login"))
 
     useEffect(() => {
         try {
